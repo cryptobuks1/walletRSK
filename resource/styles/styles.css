@@ -1,0 +1,460 @@
+body{
+	margin-top: 30px;
+	background: var(--color-background);
+	font-family: 'Inter';
+	color: white;
+}
+
+h1{
+	font-weight: 700;
+	font-size: 25px;
+	letter-spacing: 1.2px;
+}
+
+h2{
+	font-weight: 400;
+	font-size: 20px;
+	letter-spacing: 1.2px;
+}
+
+h3{
+	font-weight: 400;
+	font-size: 15px;
+	letter-spacing: 1.2px;
+}
+
+input{
+	background: var(--color-background-dark);
+	border: 1px solid var(--color-block-light);
+    border-radius: 10px;
+    padding: 7px;
+    outline: none;
+    color: white;
+    box-shadow: #13111d61 0px 0px 8px 8px;
+}	
+
+main{
+	/*margin: 0 auto;
+	max-width: 1115px;
+	padding: 30px;
+	border-radius: 30px;
+	border: 2px solid var(--color-text);*/
+}
+
+header{
+	margin-bottom: 15px;
+	/*border: 1px solid var(--color-block-light);*/
+}
+
+nav{
+	height: 60px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+nav .options{
+	display: flex;
+	align-items: center;
+	z-index: 1;
+}
+
+nav .options .wallet_block{
+	min-width: 190px;
+	height: 30px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	margin-right: 20px;
+	padding: 25px 30px;
+	border-radius: 5px 5px 0px 0px;
+	/*transition: background 0.3s, box-shadow 0.3s;*/
+	z-index: 0;
+}
+
+nav .options .wallet_block .row{
+	display: flex;
+    width: 100%;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+nav .options .wallet_block.active{
+	border-right: 1px solid #221e34;
+	background: var(--color-block-dark);
+	box-shadow: var(--color-background-dark) 0px 0px 11px 8px;
+}
+
+
+nav .options .wallet_block .row h3{
+	margin-left: 20px;
+	color: #888;
+}
+
+
+nav .options .wallet_block .row h3 span{
+	font-weight: 600;
+	color: white;
+}
+
+nav .options .wallet_block .list-outer{
+	display: none;
+	position: absolute;
+	position: absolute;
+	overflow: hidden;
+    top: 50px;
+    left: -20px;
+/*    width: 100%;
+*/	/*transition: background 0.3s, box-shadow 0.3s, visibility 0.3s, opacity 3s;*/
+	z-index: 0;
+}
+
+nav .options .wallet_block.active .list-outer{
+	display: block;
+}
+
+nav .options .wallet_block .list-outer .list{
+	padding: 0px 20px 20px 20px;
+	/*transition: background 0.3s, box-shadow 0.3s;*/
+}
+
+nav .options .wallet_block .list-outer .list.active{
+	background: var(--color-block-dark);
+    box-shadow: var(--color-background-dark) 0px 0px 11px 8px;
+    margin: 0 20px 20px 20px;	
+	border-radius: 0px 0px 5px 5px ;
+}
+
+nav .options .wallet_block .list-outer .list li{
+	color: #888;
+}
+
+nav .options .wallet_block .list-outer .list li span{
+	font-weight: 600;
+	color: white;
+}
+
+
+
+nav .options .wallet_block i#extendWalletList{
+	font-size:20px;
+	padding: 0px 20px;
+	
+	transition: transform 0.3s;
+}
+
+nav .options .wallet_block.active i#extendWalletList {
+	transform: rotate(180deg);	
+}
+
+
+#walletList ul{
+	overflow-y: scroll;
+    max-height: 195px;
+
+    -ms-overflow-style: none;  /* IE and Edge */
+  	scrollbar-width: none;  /* Firefox */
+}
+
+#walletList ul::-webkit-scrollbar {
+  display: none;
+}
+
+
+#walletList ul li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#walletList ul li div{
+	background: #13111d;
+    padding: 7px 17px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+#walletList ul li a.wallet{
+    width: 100%;
+}
+
+#walletList ul li div span.wallet{
+    transition: color 0.2s;
+}
+
+#walletList ul li div:hover span.wallet{
+    color: #39a765;
+}
+
+#walletList ul li span.delete{
+	transition: color 0.2s;
+	margin: 0px 13px;
+}
+
+#walletList ul li span.delete:hover{
+    color: #c14545;
+}
+
+
+
+
+div#content{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+aside.sidebar{
+	/*background: red;*/
+	width: 20%;
+}
+
+
+aside.sidebar div.menu ul li{
+	font-weight: 500;
+	color: #888;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 30px;
+	transition: color 0.2s;
+	cursor: pointer;
+}
+
+aside.sidebar div.menu ul li:hover .title{
+	color: #fff;
+}
+
+aside.sidebar div.menu ul li.active{
+	color: #fff;
+	font-weight: 600;
+}
+
+aside.sidebar div.menu ul li .icon{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	width: 40px;
+	height: 40px;
+	background: var(--color-block-dark);
+	border-radius: 10px;
+	box-shadow: var(--color-background-dark) 0px 0px 13px 2px;;
+}
+
+aside.sidebar div.menu ul li.active .icon{
+	background-image: linear-gradient(to right bottom, #0c8734, #1a8f40, #25974c, #2f9f57, #39a763, #39a766, #39a86a, #3aa86d, #31a168, #269963, #1b925f, #0a8b5a);
+}
+
+aside.sidebar div.menu ul li .title{
+	width: calc(100% - 50px);
+	/* Firefox */
+	width:  -moz-calc(100% - 50px);
+	/* WebKit */
+	width:  -webkit-calc(100% - 50px);
+	/* Opera */
+	width:  -o-calc(100% - 50px);
+
+	/*background: yellow;*/
+}
+
+
+
+aside.content{
+	/*background: blue;*/
+	width: 79%;
+	
+}
+
+
+
+
+/* LOGIN */
+
+.login_page {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+
+
+
+
+.token_row{
+	background: var(--color-background-dark);
+	padding: 10px 21px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2px;
+}
+
+.token_row_header{
+	background: #888;
+	color: #000;
+	font-weight: 800;
+}
+
+
+.token_row .logo_title{
+	width: 60%;
+	text-align: left;
+    display: flex;
+    align-items: center;
+    cursor: default;
+}
+
+.token_row .logo_title a{
+    display: contents;
+	transition: color 0.2s;
+}
+
+.token_row .logo_title img{
+    margin-right: 20px;
+    border-radius: 3px;
+    width: 37px;
+    font-weight: 800 !important;
+}
+
+.token_row .contract{
+	width: 20%;
+	text-align: center;
+}
+
+.token_row a{
+	transition: color 0.2s;
+}
+
+.token_row a:hover, .token_row a:hover{
+	color: green;
+}
+
+.token_row .balance{
+	width: 20%;
+	text-align: center;
+}
+
+
+
+
+
+
+.transfers .tx{
+	text-align: center;
+	width: 5%;
+}
+
+.transfers .date{
+	text-align: center;
+    width: 20%;
+
+}
+
+.transfers .from{
+	text-align: center;
+    width: 25%;
+}
+
+.transfers .to{
+	text-align: center;
+    width: 25%;
+}
+
+.transfers .value{
+	text-align: center;
+	width: 25%;
+}
+
+
+.transfer_type{
+	font-size: 12px;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 3px 9px;
+    margin-top: 5px;
+}
+
+.out_transfer{
+    background: red;
+
+}
+
+.in_transfer{
+    background: green;
+}
+
+
+
+
+
+
+
+
+
+
+.claims .tx{
+	text-align: center;
+	width: 33%;
+}
+
+.claims .date{
+	text-align: center;
+    width: 33%;
+
+}
+
+.claims .value{
+	text-align: center;
+	width: 33%;
+}
+
+
+#prices{
+	display: flex; 
+	align-items: flex-start;     
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+#prices .block{
+	display: flex;
+    min-width: 30%;
+    margin-bottom: 30px;
+    margin-top: 14px;
+    margin-right: 30px;
+}
+
+#prices .block:nth-child(3n+3){
+	margin-right: 0px;
+}
+
+#prices .block .logo_title{
+    align-items: center;
+    display: flex;	
+}
+
+#prices .block .logo_title img{
+	width: 35px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+#prices .block .logo_title a{
+	display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    transition: color 0.2s;
+}
+
+#prices .block .logo_title a:hover{
+	color: green;
+}

@@ -1,0 +1,260 @@
+:root {
+  --color-background-dark: #13111d;
+  --color-background: #171429;
+  --color-block-dark: #221e34;
+  --color-block-light: #3f3c4f;
+  --color-text: #96839D;
+  --color-green-dark: #04744A; 
+  --color-green-medium: #027126;
+  --color-green-light: #058538;
+  --color-green-very-light: #46B273;
+}
+
+
+@font-face{
+  font-family:Circular;
+  font-style:normal;
+  font-weight:700;
+  src:url(fonts/Circular-Bold.woff) format("woff")
+}
+
+@font-face{
+  font-family:Inter;
+  font-style:normal;
+  font-weight:400;
+  src:url(fonts/Inter-Regular.woff) format("woff")
+}
+
+@font-face{
+  font-family:Inter;
+  font-style:italic;
+  font-weight:400;
+  src:url(fonts/Inter-Italic.woff) format("woff")
+}
+
+@font-face{
+  font-family:Inter;
+  font-style:normal;
+  font-weight:500;
+  src:url(fonts/Inter-Medium.woff) format("woff")
+}
+
+@font-face{
+  font-family:Inter;
+  font-style:italic;
+  font-weight:500;
+  src:url(fonts/Inter-MediumItalic.woff) format("woff")
+}
+
+@font-face{
+  font-family:Inter;
+  font-style:normal;
+  font-weight:600;
+  src:url(fonts/Inter-SemiBold.woff) format("woff")
+}
+
+@font-face{
+  font-family:Inter;
+  font-style:italic;
+  font-weight:600;
+  src:url(fonts/Inter-SemiBoldItalic.woff) format("woff")
+}
+
+@font-face{
+  font-family:Inter;
+  font-style:normal;
+  font-weight:700;
+  src:url(fonts/Inter-Bold.woff) format("woff")
+}
+
+@font-face{
+  font-family:Inter;
+  font-style:italic;
+  font-weight:700;
+  src:url(fonts/Inter-BoldItalic.woff) format("woff")
+}
+
+
+.hidden-element{
+    display: none;
+/*  visibility: hidden !important;
+    opacity: 0 !important;
+    transition: visibility 3s, opacity 3s;*/
+}
+
+.rad10{
+    border-radius: 10px !important;
+}
+
+.container{
+    max-width: 1050px;
+    margin: 0px auto;
+    /*background: blue;*/
+    /*background: var(--color-block-dark);*/
+}
+
+.modal{
+    visibility:  visible;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+
+    background: #00000099;
+    z-index: 2;
+}
+
+.modal .modal__content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--color-block-light);
+    border-radius: 10px;
+    padding: 20px;
+    border: 3px solid #83aa95;
+    /*height: 100px;*/
+    width: 400px;
+    margin: 0px;
+}
+
+.block{
+    background: var(--color-block-dark);
+    border-radius: 15px;
+    padding: 20px;
+    display: inline-block;
+    box-shadow: var(--color-background-dark) 0px 0px 11px 8px;
+}
+
+.btn{
+    border-radius: 10px;
+    background-image: linear-gradient(to right bottom, #0c8734, #1a8f40, #25974c, #2f9f57, #39a763, #39a766, #39a86a, #3aa86d, #31a168, #269963, #1b925f, #0a8b5a);
+    display: inline-block;
+    text-align: center;
+    padding: 10px 40px;
+    font-size: 15px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+}
+
+.btn:hover{
+    box-shadow: #04744a 0px 0px 11px 1px;
+}
+
+.notif-block{
+    /*padding: 5px;*/
+    /*background: yellow;*/
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+
+.notif{
+    width: 400px;
+/*  position: fixed;
+    right: 20px;
+    bottom: 20px;*/
+    margin-top: 10px;
+    padding: 20px;
+    color: black;
+    box-shadow: #100c0c 4px 4px 5px 2px;
+    cursor: pointer;
+    transition: transform 0.4s;
+}
+
+@keyframes showNotif {
+ from { transform: translateX(150%); }
+ to { transform: translateX(0%); }
+}
+
+@keyframes hideNotif {
+ from { transform: translateY(0%); }
+ to { transform: translateY(150%); }
+}
+
+
+.hide-notif{
+    transform: translateX(110%);
+}
+
+.move-notif{
+    animation: hideNotif 0.3s;
+}
+
+.notif-error{
+    border-left: 8px solid #790808;
+    background: #b11620;
+}
+
+.notif-info{
+    border-left: 8px solid #194926;
+    background: var(--color-green-medium);
+    bottom: 120px;
+}
+
+
+
+
+.gray{
+    color: #888;
+}
+
+
+
+
+
+
+
+
+
+
+/* LOADING */
+
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+.copy-btn{
+    margin-left: 18px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.copy-btn:hover{
+    color: green;
+}
+
+
+#qrcode img{
+        width: 200px;
+    margin: 30px auto;
+}
